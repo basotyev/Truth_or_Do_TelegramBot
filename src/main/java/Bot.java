@@ -147,6 +147,9 @@ public void sendMsg(Message message, String text){
                 case "/endgame":
                     games.get(message.getChatId()).clear();
                     sendMsg(message, "Игра завершена!");
+                default:
+                    sendMsg(message, "Чтобы начать игру напишите /newgame");
+                    break;
             }
     }
     public ArrayList<String> filereader(String fname) {
