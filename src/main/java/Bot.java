@@ -6,8 +6,6 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
-
-import javax.validation.constraints.Null;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -54,7 +52,7 @@ public void sendMsg(Message message, String text){
                             break;
                         case "/todo":
                             int rand2 = new Random().nextInt(tasks.size()-1);
-                            sendMsg(message,questions.get(rand2));
+                            sendMsg(message,tasks.get(rand2));
                             sendMsg(message,"Нажмите /next\nЧтобы продолжить игру");
                             break;
                         case "/next":
