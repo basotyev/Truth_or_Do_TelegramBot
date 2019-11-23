@@ -77,7 +77,8 @@ public void sendMsg(Message message, String text){
                                 sendMsg(message,"Чтобы выйти из игры нажмите /stop\nЧтобы завершить набор игроков нажмите /finish");
                                 break;
                             case "/stop":
-                                games.get(message.getChatId()).clear();
+                                games.get(message.getChatId()).players.clear();
+                                games.get(message.getChatId()).recruit = false;
                                 sendMsg(message,"Игра отменена...");
                                 break;
                             case "/finish":
